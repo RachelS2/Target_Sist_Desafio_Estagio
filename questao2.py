@@ -4,15 +4,11 @@
 # sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou 
 # não a sequência.
 
-n = int(input("\nInsira uma quantidade de números para a Sequência de Fibonacci: "))
+n = int(input("Insira uma quantidade de números para a Sequência de Fibonacci: "))
 
 inicio = 0
-parte_da_sequencia = False
-aux = 0
-for contador in range(0, n/2):
-    if (inicio == n or aux == n):
-        parte_da_sequencia = True
-
+for contador in range(0, n):
+    print(inicio) 
     if (inicio == 0):
         aux = inicio + 1 
     else: 
