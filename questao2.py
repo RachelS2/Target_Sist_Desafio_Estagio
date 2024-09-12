@@ -10,7 +10,7 @@ inicio = 0
 
 check = False
 
-for contador in range(0, n):
+for contador in range(0, n, 2):
     print(inicio) 
     if (inicio == 0):
         aux = inicio + 1 
