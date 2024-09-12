@@ -7,6 +7,8 @@
 n = int(input("Insira uma quantidade de números para a Sequência de Fibonacci: "))
 
 inicio = 0
+
+check = False
 for contador in range(0, n):
     print(inicio) 
     if (inicio == 0):
@@ -14,4 +16,8 @@ for contador in range(0, n):
     else: 
         aux = inicio + aux
     print(aux) 
+
+    if (n == inicio or n == aux):
+        check = True
+        
     inicio = inicio + aux
