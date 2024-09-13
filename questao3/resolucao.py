@@ -8,18 +8,19 @@ with open(DADOS_PATH, 'r') as arquivo:
     dados = json.load(arquivo)
 
 soma = 0
-qtd_dias = 0
+qtd_dias = len(dados)
+feriados = 0
 
 valores = []
 for item in dados:
     valor = item['valor']
     if (valor == 0.0):
+        feriados += 1
         continue
     soma += valor
-    qtd_dias += 1
     valores.append(item['valor'])
 
-media = soma/qtd_dias
+media = soma/qtd_dias - feriados
 valor_max = max(valores)
 valor_min = min(valores)
 
