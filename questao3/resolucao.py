@@ -16,6 +16,6 @@ valor_min = df['valor'].min()
 df_acima_media = df[df['valor'] > media]
 dias_acima_media = len(df_acima_media)
 print(f"\nMédia de faturamento mensal: R$ {media:.3f}\n")
-print(f"O valor de faturamento foi maior do que a média em {dias_acima_media} dias do mês.")
+print(f"Número de dias no mês em que o valor de faturamento diário foi superior à média mensal: {dias_acima_media} dias.")
 print(f"O maior valor de faturamento do mês é: {valor_max}")
 print(f"O menor valor de faturamento do mês é: {valor_min}")
