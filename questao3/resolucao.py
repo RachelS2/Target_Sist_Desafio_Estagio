@@ -7,15 +7,24 @@ DADOS_PATH = Path(r"questao3\dados.json")
 with open(DADOS_PATH, 'r') as arquivo:
     dados = json.load(arquivo)
 
-df = pd.DataFrame(dados)
-media = df['valor'].mean()
+soma = 0
+qtd_dias = 0
 
-valor_max = df['valor'].max()
-valor_min = df['valor'].min()
+valores = []
+for item in dados:
+    valor = item['valor']
+    if (valor == 0.0):
+        continue
+    soma += valor
+    qtd_dias += 1
+    valores.append(item['valor'])
 
-df_acima_media = df[df['valor'] > media]
-dias_acima_media = len(df_acima_media)
+media = soma/qtd_dias
+valor_max = max(valores)
+valor_min = min(valores)
+
+
 print(f"\nMédia de faturamento mensal: R$ {media:.3f}\n")
-print(f"Número de dias no mês em que o valor de faturamento diário foi superior à média mensal: {dias_acima_media} dias.")
+#print(f"Número de dias no mês em que o valor de faturamento diário foi superior à média mensal: {dias_acima_media} dias.")
 print(f"O maior valor de faturamento do mês é: {valor_max}")
 print(f"O menor valor de faturamento do mês é: {valor_min}")
